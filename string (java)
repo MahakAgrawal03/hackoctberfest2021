@@ -1,0 +1,58 @@
+import java.util.*;
+public class Main
+{
+    public static void insert(String str,int pos){
+        Scanner sc=new Scanner(System.in);
+        	System.out.print("enter string which you want to insert");
+	String target=sc.nextLine();
+        StringBuffer sb=new StringBuffer(str);  
+        sb.insert(pos,target);
+        System.out.println(sb);  
+    }
+    
+    public static void del(String s1,String del)
+    {
+        int StartIndex=s1.indexOf(del);
+       int StopIndex=StartIndex + del.length();
+       StringBuilder builder = new StringBuilder(s1);
+       builder.delete(StartIndex, StopIndex);
+       System.out.println(builder);
+    }
+    public static void replace(String s1,String del,String tar)
+    {
+        	String processed = s1.replace(del, tar);
+       System.out.println(processed);
+       
+    }
+	public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+   String s1,del,tar;
+	System.out.println("enter string");
+	s1=sc.nextLine();
+ System.out.println("enter choice");
+	System.out.println("1.insert 2.replace 3.delete");
+	int k=sc.nextInt();
+	switch(k)
+	{
+	case 1:
+	    
+	    System.out.print("enter position");
+	int pos=sc.nextInt();
+	
+	     
+	    insert(s1,pos);
+	break;
+	case 2:System.out.println("enter replacing string");
+	tar=sc.nextLine();
+	System.out.println("select string whicu you want to replace =");
+	del=sc.nextLine();
+	    replace(s1,del,tar);
+	break;
+	case 3:	System.out.println("enter deleting string");
+	del=sc.nextLine();
+	    del(s1,del);
+	break;
+	    
+	   }      
+   }
+}
